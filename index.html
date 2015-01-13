@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<script src="/js/jquery.min.js"></script>
 	<title>Whackamole Project</title>
+	<style type="text/css">
+		
+	</style>
 </head>
 <body>
-	<a href="img/kitten.jpg"></a>
+
+	<img src="img/kitten.jpg" id="kitten" height="50%" width="50%">
+ <script>
+
+$(document).ready(function(){ 
+	$('#kitten').click(function() {
+            $(this).fadeOut(500);
+		});
+      });
+
+</script>
+
 </body>
 </html>
