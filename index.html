@@ -6,12 +6,8 @@
 	<script src="/js/jquery.min.js"></script>
 	<title>Whackamole Project</title>
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
-	<style type="text/css">
-		body  {
-    		background-image: url("img/background.jpg");
-    		background-color: #cccccc;
-		}
-	</style>
+	<style type="text/css"></style>
+
 </head>
 
 <body>
@@ -79,6 +75,8 @@
 
 	$('document').ready(function() {
 
+		$('body').css('cursor', 'url(img/mallet_r.gif),auto');
+
 		// Initalize variable to use in 
 		var hits = 0;
 
@@ -112,13 +110,11 @@
 
 			activeBox.on('click', function() {
 				playSound('#hit');
+				hits++;
 				$(this).hide();
 			});
-
-
-			 
+	 
 		}
-
 
 		function startGame() {
 
@@ -142,12 +138,13 @@
 	        	// Update the hits div with the new value
 	        	$('#catHits').html(hits);
 
+				
 		        if (gameTimer == 0) {
 		            console.log('Time is up.');
 		            clearInterval(intervalId);
 				}
-			}, 1000);
 
+			}, 1000);
 
 		}
 
@@ -171,27 +168,6 @@
 		$("#cat-head").click(function() {
 			playSound('#head');
 		});
-
-		
-
-				// $('.active').on('click', function() {
-
-				// console.log('test');
-				// 	hits++;
-				// 	console.log(hits);
-				// 	sound = $("#hit")[0];
-				// 	sound.pause();
-				// 	sound.load();
-			 //        sound.currentTime = 0;
-			 //        sound.play();
-
-			 //        $(this).removeClass('active');
-			 //        $(this).off();
-			 //        activeBox.off();
-			 //        return false;
-				// });
-
-
 
 	});
 
