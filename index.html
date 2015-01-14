@@ -1,25 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<script src="/js/jquery.min.js"></script>
 	<title>Whackamole Project</title>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 	<style type="text/css">
-		
+		body  {
+    		background-image: url("img/background.jpg");
+    		background-color: #cccccc;
+		}
 	</style>
 </head>
 <body>
 
-	<img src="img/kitten.jpg" id="kitten" height="50%" width="50%">
- <script>
+	<!-- <img src="img/kitten.jpg" id="kitten" height="50%" width="50%"> -->
 
-$(document).ready(function(){ 
-	$('#kitten').click(function() {
-            $(this).fadeOut(500);
-		});
-      });
+	<!-- <p><button>Randomize box color</button>
+	<span>Click the button!</span></p> -->
 
-</script>
+	<div class="box-container" id="main-container">
+		<div class="catbox" id="box-1" >
+			<img>
+		</div>
 
-</body>
-</html>
+		<div class="catbox" id="box-2" >
+			<img>
+		</div>
+
+		<div class="catbox" id="box-3" >
+			<img>
+		</div>
+
+		<div class="catbox" id="box-4" >
+			<img>
+		</div>
+
+		<div class="catbox" id="box-5" >
+			<img>
+		</div>
+
+		<div class="catbox" id="box-6" >
+			<img>
+		</div>
+
+		<div class="catbox" id="box-7" >
+			<img>
+		</div>
+
+		<div class="catbox" id="box-8" >
+			<img>
+		</div>
+
+		<div class="catbox" id="box-9" >
+			<img>
+		</div>
+
+		<div class="catbox" id="box-10" >
+			<img>
+		</div>
+		<button type="button" id="starter" onclick="startGame()">Whack a cat</button>
+	</div>
+
+	<script>
+		// generate a number for random selection of div
+		function getRandomInt() {
+			return Math.floor(Math.random() * (10 + 0) + 0);
+		}
+
+		// Make image visible
+		function seeCat(){
+			$(gameboard[randomNumber]).addClass('activeCat').delay( 800 ).hide( 400 );
+		}
+
+		function hideCat(){
+			setTimeout($('.activeCat').removeClass('activeCat'), 200);
+		}
+
+		function catWhack() {
+			$('.active').removeClass('active');
+			
+			$('#box-' + randomNumber).addClass('active');
+			
+		}
+
+		function startGame() {
+				clicks = 0;
+				catsHit = 0;
+				gameSpeed = setInterval(function () {
+					catWhack() }, random(2000, 3000));
+				$('button').hide("drop", { direction: 'down'}, 400);
+				$('#score').html(' ' + catsHit);
+			}
+
+
+		// initialize randomNumber variable to use in setInterval
+		var randomNumber = null;
+
+		// Define Array for Gameboard
+		var gameboard = $(".box-container").children();
+			console.log(gameboard);
+
+		// Set variables for timer
+		var count = 1;
+			console.log(count);
+
+		var maxCount = 30;
+			console.log(maxCount);
+
+		var gameTimer = 30;
+			console.log(gameTimer);
+
+		var intervalId = setInterval(function () {
+			console.log(intervalId);
+			gameTimer--;
+
+			// Generate Random Num
+			randomNumber = getRandomInt();
+			console.log(randomNumber);
+
+			// Call catWhack
+			catWhack();
+
+			// Call seeCat
+			// seeCat();
+
+			// change .activeCat background-color back to white
+			// hideCat();
+
+        	// Update the timer div with the new value
+        	$('timer').html(gameTimer);
+
+	        // TODO: Console log the current remaining time.
+
+	        console.log('You have ' + gameTimer + ' seconds left.');
+
+	        // Alert if the timer runs out.
+	        // Clear the interval afterwards.
+
+	        if (gameTimer == 0) {
+	            console.log('Time is up.');
+	            clearInterval(intervalId);
+			}
+		},1000);
+
+		
+		
+		</script>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+		</script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js">
+		</script>
+
+	</body>
+	</html>
