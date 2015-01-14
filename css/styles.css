@@ -3,6 +3,13 @@
 		background-repeat: no-repeat;
 	}
 
+	h2 {
+		font-family: Arial, Helvetica, sans-serif;
+		color: white;
+	}
+
+	/*cursor:url(img/mallet_r.gif)*/
+
 	/*#main-container {
 		width: 400px;
 		height: 400px;
@@ -15,116 +22,136 @@
 		width: 121px;
 		height: 121px;
 		padding: 5px;
-		/*border: 1px solid yellow;*/
+		border: 1px solid transparent;
 		margin: 5px;
-		float: left;
-		position: relative;
-  			top: 75px;
-  			left: 263px;
+		/*float: left;*/
+		position: fixed;
+  			top: 84px;
+  			left: 271px;
 	}
 
 	#box-2 {
 		width: 121px;
 		height: 121px;
 		padding: 5px;
-		/*border: 1px solid yellow;*/
+		border: 1px solid transparent;
 		margin: 5px;
-		float: left;
-		position: relative;
-  			top: 14px;
-  			left: 330px;
+		/*float: left;*/
+		position: fixed;
+  			top: 23px;
+  			left: 480px;
 	}
 
 	#box-3 {
 		width: 121px;
 		height: 121px;
 		padding: 5px;
-		/*border: 1px solid yellow;*/
+		border: 1px solid transparent;
 		margin: 5px;
-		float: left;
-		position: relative;
-  			top: 15px;
-  			left: 434px;
+		/*float: left;*/
+		position: fixed;
+  			top: 23px;
+  			left: 726px;
 	}
 
 	#box-4 {
 		width: 121px;
 		height: 121px;
 		padding: 5px;
-		/*border: 1px solid yellow;*/
+		border: 1px solid transparent;
 		margin: 5px;
-		float: left;
-		position: relative;
-  			top: 15px;
-  			left: 582px;
+		/*float: left;*/
+		position: fixed;
+  			top: 23px;
+  			left: 1014px;
 	}
 	#box-5 {
 		width: 121px;
 		height: 121px;
 		padding: 5px;
-		/*border: 1px solid yellow;*/
+		border: 1px solid transparent;
 		margin: 5px;
 		/*float: left;*/
-		position: relative;
-  			top: 318px;
-  			left: 309px;
+		position: fixed;
+  			top: 322px;
+  			left: 317px;
 	}
 	#box-6 {
 		width: 121px;
 		height: 121px;
 		padding: 5px;
-		/*border: 1px solid yellow;*/
+		border: 1px solid transparent;
 		margin: 5px;
 		/*float: left;*/
-		position: relative;
-  			top: 90px;
-  			left: 513px;
+		position: fixed;
+  			top: 230px;
+  			left: 521px;
 	}
 	#box-7 {
 		width: 121px;
 		height: 121px;
 		padding: 5px;
-		/*border: 1px solid yellow;*/
+		border: 1px solid transparent;
 		margin: 5px;
 		/*float: left;*/
-		position: relative;
-  			top: -30px;
-  			left: 718px;
+		position: fixed;
+  			top: 248px;
+  			left: 726px;
 
 	}
 	#box-8 {
 		width: 121px;
 		height: 121px;
 		padding: 5px;
-		/*border: 1px solid yellow;*/
+		border: 1px solid transparent;
 		margin: 5px;
 		/*float: left;*/
-		position: relative;
-  			top: -185px;
-  			left: 938px;
+		position: fixed;
+  			top: 226px;
+  			left: 946px;
 	}
 	#box-9 {
 		width: 121px;
 		height: 121px;
 		padding: 5px;
-		/*border: 1px solid yellow;*/
+		border: 1px solid transparent;
 		margin: 5px;
 		/*float: left;*/
-		position: relative;
-  			top: -115px;
-  			left: 543px;
+		position: fixed;
+  			top: 440px;
+  			left: 552px;
 	}
 	#box-10 {
 		width: 121px;
 		height: 121px;
 		padding: 5px;
-		/*border: 1px solid yellow;*/
+		border: 1px solid transparent;
 		margin: 5px;
-		float: left;
-		position: relative;
-  			top: -272px;
-  			left: 1017px;
+		/*float: left;*/
+		position: fixed;
+  			top: 415px;
+  			left: 1022px;
 	}
+
+	#starter {
+    background-color: gray;
+    border-radius:10px;
+    width: 120px;
+    color: white;
+    font-family: 'Arial';
+    font-size: 32px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+}
+
+
+
+	#starter:hover {
+    border: none;
+    background:black;
+    box-shadow: 0px 0px 1px #777;
+}
 
 	.activeCat {
 		background-image: url("img/cat1.gif");
