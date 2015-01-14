@@ -1,6 +1,7 @@
 	body {
-		background-image: url("img/background.jpg");
+		background-image: url("../img/background.jpg");
 		background-repeat: no-repeat;
+		cursor: url('../img/mallet_r.gif'), auto;
 	}
 
 	h2 {
@@ -9,14 +10,6 @@
 	}
 
 	/*cursor:url(img/mallet_r.gif)*/
-
-	/*#main-container {
-		width: 400px;
-		height: 400px;
-		padding: 5px;
-		border: 1px solid navy;
-		margin: 5px;
-	}*/
 
 	#box-1 {
 		width: 121px;
