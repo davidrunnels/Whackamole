@@ -133,9 +133,45 @@
   			left: 1022px;
 	}
 
+	#dj-kitty {
+		width: 221px;
+		height: 121px;
+		padding: 5px;
+		border: 1px solid transparent;
+		margin: 5px;
+		/*float: left;*/
+		position: fixed;
+  			top: 515px;
+  			left: 750px;
+	}
+
+	#cat-head {
+		width: 140px;
+		height: 121px;
+		padding: 5px;
+		border: 1px solid transparent;
+		margin: 5px;
+		/*float: left;*/
+		position: fixed;
+  			top: 70px;
+  			left: 75px;
+	}
+
+	#cat-belly {
+		width: 180px;
+		height: 250px;
+		padding: 5px;
+		border: 1px solid transparent;
+		margin: 5px;
+		/*float: left;*/
+		position: fixed;
+  			top: 250px;
+  			left: 100px;
+	}
+
 	#starter {
     background-color: gray;
-    border-radius:10px;
+    border-radius:0px;
     width: 120px;
     color: white;
     font-family: 'Arial';

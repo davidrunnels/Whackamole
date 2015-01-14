@@ -13,12 +13,13 @@
 		}
 	</style>
 </head>
+
 <body>
 
-	<!-- <img src="img/kitten.jpg" id="kitten" height="50%" width="50%"> -->
-
-	<!-- <p><button>Randomize box color</button>
-	<span>Click the button!</span></p> -->
+	<audio src="sounds/dj_scratch.mp3" id="dj"></audio>
+	<audio src="sounds/hit.wav" id="hit"></audio>
+	<audio src="sounds/cat_purr.wav" id="belly"></audio>
+	<audio src="sounds/cat_meow.wav" id="head"></audio>
 
 	<div class="box-container" id="main-container">
 		<div class="catbox" id="box-1" >
@@ -58,43 +59,33 @@
 		</div>
 
 		<div class="scoreboard" id="box-10" >
-			<button type="button" id="starter" onclick="startGame()">Start</button>
+			<button type="button" id="starter">Start</button>
 			<h2>Time: <span id="timer"></span><br></h2>
-			<h2>Hits: <span id="hits"></span><br></h2>
+			<h2>Hits: <span id="catHits"></span><br></h2>
+		</div>
+		<div id="dj-kitty">
+		</div>
+		<div id="cat-head">
+		</div><div id="cat-belly">
 		</div>
 	</div>
 
-	<script>
-		// generate a number for random selection of div
-		function getRandomInt() {
-			return Math.floor(Math.random() * (10 + 0) + 0);
-		}
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-		// Make image visible
-		function seeCat(){
-			$(gameboard[randomNumber]).addClass('activeCat').delay( 800 ).hide( 400 );
-		}
+	<script type="text/javascript">
 
-		function hideCat(){
-			setTimeout($('.activeCat').removeClass('activeCat'), 200);
-		}
-
-		function catWhack() {
-			$('.active').removeClass('active');
-			
-			$('#box-' + randomNumber).addClass('active');
-			
-		}
+	$('document').ready(function() {
 
 		// Initalize variable to use in 
-		var catHits
+		var hits = 0;
 
 		// Initialize variable to use in setInterval
 		var randomNumber = null;
 
 		// Define Array for Gameboard
 		var gameboard = $(".box-container").children();
-			console.log(gameboard);
+			// console.log(gameboard);
 
 		// Set variables for timer
 		var count = 1;
@@ -103,9 +94,53 @@
 		var maxCount = 30;
 
 		var gameTimer = 30;
-			// console.log(gameTimer);
+
+		var activeBox;
+
+		// console.log(gameTimer);
+		// generate a number for random selection of div
+		function getRandomInt() {
+			return Math.floor(Math.random() * (10 + 0) + 0);
+		}
+
+
+		function catWhack() {
+
+			// Remove all previous event li
+			// $('.catbox').off();
+			$('.catbox').removeClass('active');
+
+			// $(".catbox").on('click', function(){
+			// 	var is_clicked = $(this).hasClass( "active" );
+			// 	if(is_clicked) {
+			// 		$("#hit").trigger("play");
+			// 	}
+			// });
+			
+			$('#box-' + randomNumber).addClass('active');
+			// Add an event listener to this one individual box
+			$('#box-' + randomNumber).click(function(){
+				console.log('clicked!');
+				$("#hit").trigger("play");
+				hits++;
+				// $('#box-' + randomNumber).hide();
+				console.log(catHits);
+			}); 
+
+			
+
+			// Remove all event listeners on everything with class active
+			// $('.catbox').removeClass('active');
+
+
+			
+		}
 
 		function startGame() {
+
+			// console.log('test');
+			// Remove Event Listener to Start Button
+			$('#starter').off();
 
 			var intervalId = setInterval(function () {
 				// console.log(intervalId);
@@ -113,22 +148,39 @@
 
 				// Generate Random Num
 				randomNumber = getRandomInt();
-				console.log(randomNumber);
+				// console.log(randomNumber);
 
 				// Call catWhack
 				catWhack();
+				
+				/*-----------------*/
+				// $(activeBox).removeClass('active');
 
-				// Call seeCat
-				// seeCat();
+				// $(activeBox).off();
 
-				// change .activeCat background-color back to white
-				// hideCat();
+				// activeBox = $('#box-' + randomNumber);
+
+				// activeBox.addClass('active');
+
+				// activeBox.click(function(){
+				// 	$("#hit").trigger("play");
+				// });
+
+				// $(activeBox).click(function(){
+				// 	console.log('clicked!');
+				// 	hits++;
+				// 	$('#box-' + randomNumber).off();
+				// 	console.log(catHits);
+
+				// });
+				/*-----------------*/
+
 
 	        	// Update the timer div with the new value
 	        	$('#timer').html(gameTimer);
 
 	        	// Update the hits div with the new value
-	        	$('#hits').html(catHits);
+	        	$('#catHits').html(hits);
 
 		        if (gameTimer == 0) {
 		            console.log('Time is up.');
@@ -136,13 +188,26 @@
 				}
 			},1000);
 		}
-		
-		
+
+		// Add Event Listener to Start Button
+		$('#starter').click(startGame);
+
+		$("#dj-kitty").click(function(){
+			$("#dj").trigger("play");
+		});
+
+		$("#cat-belly").click(function(){
+			$("#belly").trigger("play");
+		});
+
+		$("#cat-head").click(function(){
+			$("#head").trigger("play");
+		});
+
+	});
+
 		</script>
 
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
-		</script>
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js">
 		</script>
