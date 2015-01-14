@@ -1,0 +1,145 @@
+	body {
+		background-image: url("img/background.jpg");
+		background-repeat: no-repeat;
+	}
+
+	/*#main-container {
+		width: 400px;
+		height: 400px;
+		padding: 5px;
+		border: 1px solid navy;
+		margin: 5px;
+	}*/
+
+	#box-1 {
+		width: 121px;
+		height: 121px;
+		padding: 5px;
+		/*border: 1px solid yellow;*/
+		margin: 5px;
+		float: left;
+		position: relative;
+  			top: 75px;
+  			left: 263px;
+	}
+
+	#box-2 {
+		width: 121px;
+		height: 121px;
+		padding: 5px;
+		/*border: 1px solid yellow;*/
+		margin: 5px;
+		float: left;
+		position: relative;
+  			top: 14px;
+  			left: 330px;
+	}
+
+	#box-3 {
+		width: 121px;
+		height: 121px;
+		padding: 5px;
+		/*border: 1px solid yellow;*/
+		margin: 5px;
+		float: left;
+		position: relative;
+  			top: 15px;
+  			left: 434px;
+	}
+
+	#box-4 {
+		width: 121px;
+		height: 121px;
+		padding: 5px;
+		/*border: 1px solid yellow;*/
+		margin: 5px;
+		float: left;
+		position: relative;
+  			top: 15px;
+  			left: 582px;
+	}
+	#box-5 {
+		width: 121px;
+		height: 121px;
+		padding: 5px;
+		/*border: 1px solid yellow;*/
+		margin: 5px;
+		/*float: left;*/
+		position: relative;
+  			top: 318px;
+  			left: 309px;
+	}
+	#box-6 {
+		width: 121px;
+		height: 121px;
+		padding: 5px;
+		/*border: 1px solid yellow;*/
+		margin: 5px;
+		/*float: left;*/
+		position: relative;
+  			top: 90px;
+  			left: 513px;
+	}
+	#box-7 {
+		width: 121px;
+		height: 121px;
+		padding: 5px;
+		/*border: 1px solid yellow;*/
+		margin: 5px;
+		/*float: left;*/
+		position: relative;
+  			top: -30px;
+  			left: 718px;
+
+	}
+	#box-8 {
+		width: 121px;
+		height: 121px;
+		padding: 5px;
+		/*border: 1px solid yellow;*/
+		margin: 5px;
+		/*float: left;*/
+		position: relative;
+  			top: -185px;
+  			left: 938px;
+	}
+	#box-9 {
+		width: 121px;
+		height: 121px;
+		padding: 5px;
+		/*border: 1px solid yellow;*/
+		margin: 5px;
+		/*float: left;*/
+		position: relative;
+  			top: -115px;
+  			left: 543px;
+	}
+	#box-10 {
+		width: 121px;
+		height: 121px;
+		padding: 5px;
+		/*border: 1px solid yellow;*/
+		margin: 5px;
+		float: left;
+		position: relative;
+  			top: -272px;
+  			left: 1017px;
+	}
+
+	.activeCat {
+		background-image: url("img/cat1.gif");
+		width: 121px;
+		height: 121px;
+		background-color: black;
+	}
+
+	.inactiveCat {
+		background-color: black;
+	}
+
+	.active {
+		background-image: url('../img/cat1.gif');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
