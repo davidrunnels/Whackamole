@@ -17,45 +17,45 @@
 <body>
 
 	<audio src="sounds/dj_scratch.mp3" id="dj"></audio>
-	<audio src="sounds/hit.wav" id="hit"></audio>
+	<audio id="hit" src="sounds/hit.wav"></audio>
 	<audio src="sounds/cat_purr.wav" id="belly"></audio>
 	<audio src="sounds/cat_meow.wav" id="head"></audio>
 
 	<div class="box-container" id="main-container">
 		<div class="catbox" id="box-1" >
-			<!-- <img> -->
+			<div></div>
 		</div>
 
 		<div class="catbox" id="box-2" >
-			<!-- <img> -->
+			<div></div>
 		</div>
 
 		<div class="catbox" id="box-3" >
-			<!-- <img> -->
+			<div></div>
 		</div>
 
 		<div class="catbox" id="box-4" >
-			<!-- <img> -->
+			<div></div>
 		</div>
 
 		<div class="catbox" id="box-5" >
-			<!-- <img> -->
+			<div></div>
 		</div>
 
 		<div class="catbox" id="box-6" >
-			<!-- <img> -->
+			<div></div>
 		</div>
 
 		<div class="catbox" id="box-7" >
-			<!-- <img> -->
+			<div></div>
 		</div>
 
 		<div class="catbox" id="box-8" >
-			<!-- <img> -->
+			<div></div>
 		</div>
 
 		<div class="catbox" id="box-9" >
-			<!-- <img> -->
+			<div></div>
 		</div>
 
 		<div class="scoreboard" id="box-10" >
@@ -63,11 +63,13 @@
 			<h2>Time: <span id="timer"></span><br></h2>
 			<h2>Hits: <span id="catHits"></span><br></h2>
 		</div>
-		<div id="dj-kitty">
-		</div>
-		<div id="cat-head">
-		</div><div id="cat-belly">
-		</div>
+		
+		<div id="dj-kitty"></div>
+
+		<div id="cat-head"></div>
+
+		<div id="cat-belly"></div>
+
 	</div>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -85,60 +87,41 @@
 
 		// Define Array for Gameboard
 		var gameboard = $(".box-container").children();
-			// console.log(gameboard);
 
 		// Set variables for timer
 		var count = 1;
-			// console.log(count);
 
-		var maxCount = 30;
+		var maxCount = 30,
+			gameTimer = 30,
+			activeBox;
 
-		var gameTimer = 30;
-
-		var activeBox;
-
-		// console.log(gameTimer);
 		// generate a number for random selection of div
 		function getRandomInt() {
 			return Math.floor(Math.random() * (10 + 0) + 0);
 		}
 
-
 		function catWhack() {
+			 
+			// activeBox.off();
+			$('.catbox div').removeClass('active');
 
-			// Remove all previous event li
-			// $('.catbox').off();
-			$('.catbox').removeClass('active');
-
-			// $(".catbox").on('click', function(){
-			// 	var is_clicked = $(this).hasClass( "active" );
-			// 	if(is_clicked) {
-			// 		$("#hit").trigger("play");
-			// 	}
-			// });
+			activeBox = $('#box-' + randomNumber + ' div');
+			// activeBox.show();
 			
-			$('#box-' + randomNumber).addClass('active');
-			// Add an event listener to this one individual box
-			$('#box-' + randomNumber).click(function(){
-				console.log('clicked!');
-				$("#hit").trigger("play");
-				hits++;
-				// $('#box-' + randomNumber).hide();
-				console.log(catHits);
-			}); 
+			activeBox.addClass('active');
 
-			
-
-			// Remove all event listeners on everything with class active
-			// $('.catbox').removeClass('active');
+			activeBox.on('click', function() {
+				playSound('#hit');
+				$(this).hide();
+			});
 
 
-			
+			 
 		}
+
 
 		function startGame() {
 
-			// console.log('test');
 			// Remove Event Listener to Start Button
 			$('#starter').off();
 
@@ -152,29 +135,6 @@
 
 				// Call catWhack
 				catWhack();
-				
-				/*-----------------*/
-				// $(activeBox).removeClass('active');
-
-				// $(activeBox).off();
-
-				// activeBox = $('#box-' + randomNumber);
-
-				// activeBox.addClass('active');
-
-				// activeBox.click(function(){
-				// 	$("#hit").trigger("play");
-				// });
-
-				// $(activeBox).click(function(){
-				// 	console.log('clicked!');
-				// 	hits++;
-				// 	$('#box-' + randomNumber).off();
-				// 	console.log(catHits);
-
-				// });
-				/*-----------------*/
-
 
 	        	// Update the timer div with the new value
 	        	$('#timer').html(gameTimer);
@@ -186,23 +146,52 @@
 		            console.log('Time is up.');
 		            clearInterval(intervalId);
 				}
-			},1000);
+			}, 1000);
+
+
+		}
+
+		function playSound(id) {
+			sound = $(id)[0];
+			sound.load();
+			sound.play();
 		}
 
 		// Add Event Listener to Start Button
 		$('#starter').click(startGame);
 
 		$("#dj-kitty").click(function(){
-			$("#dj").trigger("play");
+			playSound('#dj');
 		});
 
 		$("#cat-belly").click(function(){
-			$("#belly").trigger("play");
+			playSound('#belly');
 		});
 
-		$("#cat-head").click(function(){
-			$("#head").trigger("play");
+		$("#cat-head").click(function() {
+			playSound('#head');
 		});
+
+		
+
+				// $('.active').on('click', function() {
+
+				// console.log('test');
+				// 	hits++;
+				// 	console.log(hits);
+				// 	sound = $("#hit")[0];
+				// 	sound.pause();
+				// 	sound.load();
+			 //        sound.currentTime = 0;
+			 //        sound.play();
+
+			 //        $(this).removeClass('active');
+			 //        $(this).off();
+			 //        activeBox.off();
+			 //        return false;
+				// });
+
+
 
 	});
 
