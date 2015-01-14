@@ -22,45 +22,46 @@
 
 	<div class="box-container" id="main-container">
 		<div class="catbox" id="box-1" >
-			<img>
+			<!-- <img> -->
 		</div>
 
 		<div class="catbox" id="box-2" >
-			<img>
+			<!-- <img> -->
 		</div>
 
 		<div class="catbox" id="box-3" >
-			<img>
+			<!-- <img> -->
 		</div>
 
 		<div class="catbox" id="box-4" >
-			<img>
+			<!-- <img> -->
 		</div>
 
 		<div class="catbox" id="box-5" >
-			<img>
+			<!-- <img> -->
 		</div>
 
 		<div class="catbox" id="box-6" >
-			<img>
+			<!-- <img> -->
 		</div>
 
 		<div class="catbox" id="box-7" >
-			<img>
+			<!-- <img> -->
 		</div>
 
 		<div class="catbox" id="box-8" >
-			<img>
+			<!-- <img> -->
 		</div>
 
 		<div class="catbox" id="box-9" >
-			<img>
+			<!-- <img> -->
 		</div>
 
-		<div class="catbox" id="box-10" >
-			<img>
+		<div class="scoreboard" id="box-10" >
+			<button type="button" id="starter" onclick="startGame()">Start</button>
+			<h2>Time: <span id="timer"></span><br></h2>
+			<h2>Hits: <span id="hits"></span><br></h2>
 		</div>
-		<button type="button" id="starter" onclick="startGame()">Whack a cat</button>
 	</div>
 
 	<script>
@@ -85,17 +86,10 @@
 			
 		}
 
-		function startGame() {
-				clicks = 0;
-				catsHit = 0;
-				gameSpeed = setInterval(function () {
-					catWhack() }, random(2000, 3000));
-				$('button').hide("drop", { direction: 'down'}, 400);
-				$('#score').html(' ' + catsHit);
-			}
+		// Initalize variable to use in 
+		var catHits
 
-
-		// initialize randomNumber variable to use in setInterval
+		// Initialize variable to use in setInterval
 		var randomNumber = null;
 
 		// Define Array for Gameboard
@@ -104,47 +98,44 @@
 
 		// Set variables for timer
 		var count = 1;
-			console.log(count);
+			// console.log(count);
 
 		var maxCount = 30;
-			console.log(maxCount);
 
 		var gameTimer = 30;
-			console.log(gameTimer);
+			// console.log(gameTimer);
 
-		var intervalId = setInterval(function () {
-			console.log(intervalId);
-			gameTimer--;
+		function startGame() {
 
-			// Generate Random Num
-			randomNumber = getRandomInt();
-			console.log(randomNumber);
+			var intervalId = setInterval(function () {
+				// console.log(intervalId);
+				gameTimer--;
 
-			// Call catWhack
-			catWhack();
+				// Generate Random Num
+				randomNumber = getRandomInt();
+				console.log(randomNumber);
 
-			// Call seeCat
-			// seeCat();
+				// Call catWhack
+				catWhack();
 
-			// change .activeCat background-color back to white
-			// hideCat();
+				// Call seeCat
+				// seeCat();
 
-        	// Update the timer div with the new value
-        	$('timer').html(gameTimer);
+				// change .activeCat background-color back to white
+				// hideCat();
 
-	        // TODO: Console log the current remaining time.
+	        	// Update the timer div with the new value
+	        	$('#timer').html(gameTimer);
 
-	        console.log('You have ' + gameTimer + ' seconds left.');
+	        	// Update the hits div with the new value
+	        	$('#hits').html(catHits);
 
-	        // Alert if the timer runs out.
-	        // Clear the interval afterwards.
-
-	        if (gameTimer == 0) {
-	            console.log('Time is up.');
-	            clearInterval(intervalId);
-			}
-		},1000);
-
+		        if (gameTimer == 0) {
+		            console.log('Time is up.');
+		            clearInterval(intervalId);
+				}
+			},1000);
+		}
 		
 		
 		</script>
