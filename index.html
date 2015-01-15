@@ -16,6 +16,7 @@
 	<audio id="hit" src="sounds/hit.wav"></audio>
 	<audio src="sounds/cat_purr.wav" id="belly"></audio>
 	<audio src="sounds/cat_meow.wav" id="head"></audio>
+	<audio src="sounds/furball.wav" id="end"></audio>
 
 	<div class="box-container" id="main-container">
 		<div class="catbox" id="box-1" >
@@ -87,13 +88,12 @@
 		// Set variables for timer
 		var count = 1;
 
-		var maxCount = 30,
-			gameTimer = 30,
+		var gameTimer = 30,
 			activeBox;
 
 		// generate a number for random selection of div
 		function getRandomInt() {
-			return Math.floor(Math.random() * (10 + 0) + 0);
+			return Math.floor(Math.random() * (9 + 0) + 0);
 		}
 
 		function catWhack() {
@@ -108,8 +108,8 @@
 
 			activeBox.on('click', function() {
 				playSound('#hit');
-				hits++;
 				$(this).hide();
+				hits++;
 			});
 	 
 		}
@@ -140,6 +140,13 @@
 		        if (gameTimer == 0) {
 		            console.log('Time is up.');
 		            clearInterval(intervalId);
+		            setTimeout(function() {
+		            playSound('#end');
+		        	}, 1000);
+		            setTimeout(function() {
+		            	location.reload();
+		            }, 5000);
+		            
 				}
 
 			}, 1000);
