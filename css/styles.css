@@ -1,7 +1,10 @@
 	body {
 		background-image: url("../img/background.jpg");
 		background-repeat: no-repeat;
-		cursor: url('../img/mallet_r.gif'), auto;
+		cursor: crosshair;
+	}
+
+	#main-container {
 	}
 
 	h2 {
@@ -9,15 +12,12 @@
 		color: white;
 	}
 
-	/*cursor:url(img/mallet_r.gif)*/
-
 	#box-1 {
 		width: 121px;
 		height: 121px;
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 84px;
   			left: 271px;
@@ -29,7 +29,6 @@
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 23px;
   			left: 480px;
@@ -41,7 +40,6 @@
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 23px;
   			left: 726px;
@@ -53,7 +51,6 @@
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 23px;
   			left: 1014px;
@@ -64,7 +61,6 @@
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 322px;
   			left: 317px;
@@ -75,7 +71,6 @@
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 230px;
   			left: 521px;
@@ -86,7 +81,6 @@
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 248px;
   			left: 726px;
@@ -98,7 +92,6 @@
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 226px;
   			left: 946px;
@@ -109,7 +102,6 @@
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 440px;
   			left: 552px;
@@ -120,7 +112,6 @@
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 415px;
   			left: 1022px;
@@ -132,10 +123,10 @@
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 515px;
   			left: 750px;
+  		cursor: pointer;
 	}
 
 	#cat-head {
@@ -144,10 +135,10 @@
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 70px;
   			left: 75px;
+  		cursor: pointer;
 	}
 
 	#cat-belly {
@@ -156,10 +147,11 @@
 		padding: 5px;
 		border: 1px solid transparent;
 		margin: 5px;
-		/*float: left;*/
 		position: fixed;
   			top: 250px;
   			left: 100px;
+  		cursor: pointer;
+
 	}
 
 	#starter {
